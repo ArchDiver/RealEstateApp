@@ -59,7 +59,7 @@ ROOT_URLCONF = 'RealEstateApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'build')],
+        'DIRS': [BASE_DIR/ 'build'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,19 +127,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ 
-    os.path.join(BASE_DIR, 'build/static')
+    BASE_DIR/ 'build/static'
 ]
-STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT  = BASE_DIR/ 'static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR/ 'media'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSIONS_CLASSES': [
-        'rest_framework.persmissions.IsAuthenticated'
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
     ],
-    'DEFAULT_AUTHENTICATRION_CLASSES': [
-        'rest_framwork_simplejwt.authentication,JWTAuthentication'
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3

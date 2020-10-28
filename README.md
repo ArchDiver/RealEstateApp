@@ -1,4 +1,4 @@
-This is a Real Estate App like Zillow
+This is a Real Estate App like Zillow using Django and React.
 
 
 Tech used:

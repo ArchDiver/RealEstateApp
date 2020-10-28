@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'accounts',
+    'staff',
+    # 'listings',
+    # 'contacts',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +87,8 @@ DATABASES = {
         'NAME': 'RealEstateApp',
         'USER': 'EnergyHawk',
         'PASSWORD': 'passwordHawk',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'PORT': '5444'
     }
 }
 

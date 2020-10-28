@@ -21,6 +21,13 @@ class SignupView(APIView):
         if password == password2:
             if User.objects.filter(email=email).exsits():
                 return Response({'error': 'Email already exsists'})
+            else:
+                if len(password) < 6:
+                    return Response({'error': 'Password must be at least 6 characters'})
+                else:
+                    user = User.ojects.create_user(email=email, password=password, name=name)
+                    user.save()
+                    return Response({'sucess': 'User created successfully'})
 
         else:
             return Response({'error': 'Passwords do not match'})

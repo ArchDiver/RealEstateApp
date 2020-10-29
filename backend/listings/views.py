@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework import permissions
 from .models import Listing
-from .serializers import ListingSerializer, listingDetailSerializer
+from .serializers import ListingSerializer, ListingDetailSerializer
 from datetime import datetime, timezone, timedelta
 
 # Create your views here.
@@ -18,7 +18,7 @@ class ListingsView(ListAPIView):
 
 class ListingView(RetrieveAPIView):
     queryset = Listing.objects.order_by('-list_date').filter(is_published=True)
-    serializer_class = listingDetailSerializer
+    serializer_class = ListingDetailSerializer
     lookup_field = 'slug'
 
 class SearchView(APIView):

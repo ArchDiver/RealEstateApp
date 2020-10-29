@@ -32,6 +32,27 @@ class SearchView(APIView):
         sale_type = data['sale_type']
         queryset = queryset.filter(sale_type__iexact=sale_type)
 
+        
+        kWh = data['kWh']
+        if kWh == '0+':
+            kWh = 0
+        elif kWh == '200,000+':
+            kWh = 200000
+        elif kWh == '400,000+':
+            kWh = 400000
+        elif kWh == '600,000+':
+            kWh = 600000
+        elif kWh == '800,000+':
+            kWh = 800000
+        elif kWh == '1,000,000+':
+            kWh = 1000000
+        elif kWh == '1,200,000+':
+            kWh = 1200000
+        elif kWh == '1,500,000+':
+            kWh = 1500000
+        elif kWh == 'Any':
+            kWh = -1
+
         price = data['price']
         if price == '$0+':
             price = 0

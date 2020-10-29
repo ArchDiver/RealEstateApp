@@ -11,6 +11,7 @@ class Listing(models.Model):
         FOR_SALE = 'For Sale'
         FOR_RENT = 'For Rent'
         OWNED = 'Owned'
+        SUB_RENT = "Sub-Rent"
     
     class BuildingType(models.TextChoices):
         HOUSE = 'House'
@@ -24,6 +25,7 @@ class Listing(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=15)
+    kWh = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     sale_type = models.CharField(max_length=50, choices=SaleType.choices, default=SaleType.FOR_SALE)
     price = models.IntegerField()

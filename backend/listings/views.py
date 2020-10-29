@@ -180,26 +180,7 @@ class SearchView(APIView):
                 count += 1
             if query.photo_10:
                 count += 1
-            if query.photo_11:
-                count += 1
-            if query.photo_12:
-                count += 1
-            if query.photo_13:
-                count += 1
-            if query.photo_14:
-                count += 1
-            if query.photo_15:
-                count += 1
-            if query.photo_16:
-                count += 1
-            if query.photo_17:
-                count += 1
-            if query.photo_18:
-                count += 1
-            if query.photo_19:
-                count += 1
-            if query.photo_20:
-                count += 1
+
             
             if count < has_photos:
                 slug = query.slug
